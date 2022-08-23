@@ -1,9 +1,29 @@
 <template>
   <div class="about">
-     <div id="tran-space">
-    <div id="blockly-div" style="height: 480px; width: 600px;"></div>
+    <header>
+      <div class="nav-bar">
+        <ul>
+            <li id="blockx-version">
+                <p>blockX 1.0</p>
+            </li>
+            <li id="python-version">
+                <label>python:</label>
+                <select>
+                  <option>3.7</option>
+                  <option>3.8</option>
+                  <option>3.9</option>
+                  <option>3.10</option>
+                </select>
+            </li>
+        </ul>
+      </div>
+    </header>
+    <div id="tran-space">
+    <div id="blockly-div"></div>
     <div id="code-div">
-      <textarea id="python-code"></textarea>
+      <!-- <div id="code-texteditor"> -->
+        <textarea id="python-code"></textarea>
+      <!-- </div> -->
     </div>
   </div>
   <xml id="toolbox" style="display:none">
@@ -598,9 +618,21 @@ export default {
   },
   mounted: function () {
     this.workSpace = blockly.inject('blockly-div', {
-      toolbox: document.getElementById('toolbox')
+      toolbox: document.getElementById('toolbox'),
+      media: '../../node_modules/blockx/node_modules/blockly/media/',
+      zoom: {
+        controls: true,
+        wheel: true,
+        startScale: 1.0,
+        maxScale: 3,
+        minScale: 0.3,
+        scaleSpeed: 1.2
+      },
+      trashcan: true
     })
     console.log('workspace', this.workSpace)
+    Blockly.HSV_SATURATION = 0.65
+    Blockly.HSV_VALUE = 0.85
     blockly.Xml.domToWorkspace(document.getElementById('toolbox'), this.workSpace)
     this.workSpace.addChangeListener(this.updateFunction)
   },
@@ -613,3 +645,89 @@ export default {
 }
 
 </script>
+
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: 1px solid #faebcc;
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+header .nav-bar {
+  height: 50px;
+  display: flex;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(145 239 80);
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header ul li {
+  float: left;
+}
+
+header ul li select {
+  height: 25px;
+  margin: 10px;
+}
+
+#blockx-version {
+  margin: 20px;
+}
+
+#python-version {
+  margin: auto;
+}
+
+#tran-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f2f4f7;
+}
+
+#blockly-div {
+  margin: auto;
+  height: 700px;
+  flex: 0 0 50%;
+  display: inline-block;
+  width: 50%;
+}
+
+#code-div {
+  margin: auto;
+  background-color: rgb(206 245 179);
+  display: inline-block;
+  height: 700px;
+  flex: 0 0 50%;
+}
+
+#python-code {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 660px;
+  width: 94%;
+
+}
+/* stylelint-disable */
+.CodeMirror {
+  height: 620px !important;
+}
+
+</style>

@@ -2198,7 +2198,6 @@ blockx@../blockx:
     codemirror "^6.0.1"
     stylelint "^14.11.0"
     stylelint-config-standard "^26.0.0"
-    webpack "^5.74.0"
     webpack-cli "^4.10.0"
 
 bluebird@^3.1.1:
@@ -7223,7 +7222,7 @@ webpack-virtual-modules@^0.4.2:
   resolved "https://registry.npmmirror.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.4.tgz#a19fcf371923c59c4712d63d7d194b1e4d8262cc"
   integrity sha512-h9atBP/bsZohWpHnr+2sic8Iecb60GxftXsWNLLLSqewgIsGzByd2gcIID4nXcG+3tNe4GQG3dLcff3kXupdRA==
 
-webpack@^5.54.0, webpack@^5.74.0:
+webpack@^5.54.0:
   version "5.74.0"
   resolved "https://registry.npmmirror.com/webpack/-/webpack-5.74.0.tgz#02a5dac19a17e0bb47093f2be67c695102a55980"
   integrity sha512-A2InDwnhhGN4LYctJj6M1JEaGL7Luj6LOmyBHjcI8529cm5p6VXiTIW2sn6ffvEAKmveLzvu4jrihwXtPojlAA==

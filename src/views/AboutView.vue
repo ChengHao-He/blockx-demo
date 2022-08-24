@@ -1,13 +1,14 @@
 <template>
   <div class="about">
-    <header>
-      <div class="nav-bar">
+    <div class="main">
+      <header>
+         <div class="nav-bar">
         <ul>
             <li id="blockx-version">
-                <p>blockX 1.0</p>
+                <p class="blockX">blockX 1.0</p>
             </li>
             <li id="python-version">
-                <label>python:</label>
+                <label class="python">python:</label>
                 <select>
                   <option>3.7</option>
                   <option>3.8</option>
@@ -17,32 +18,25 @@
             </li>
         </ul>
       </div>
-    </header>
-    <div id="tran-space">
-    <div id="blockly-div"></div>
-    <div id="code-div">
-      <!-- <div id="code-texteditor"> -->
-        <textarea id="python-code"></textarea>
-      <!-- </div> -->
+       </header>
+      <div class="body">
+        <div class="workspaceBorder">
+          <div class="workspaceLable">积木区</div>
+          <div class="workspace" id="blockly-div"></div>
+        </div>
+           <div class="textAreaBorder">
+          <div class="textAreaLable">文本域</div>
+           <div class="textArea" id="code-div">
+             <textarea id="python-code"></textarea>
+           </div>
+        </div>
+      </div>
     </div>
-  </div>
   <xml id="toolbox" style="display:none">
     <category name="Variables" colour="225" custom="VARIABLE">
     </category>
     <category name="Literal Values" colour="30">
-      <!-- <block type="lists_create_with">
-        <mutation items="3"></mutation>
-      </block>
-      <block type="sets_create_with">
-        <mutation items="3"></mutation>
-      </block>
-      <block type="tuples_create_with">
-        <mutation items="3"></mutation>
-      </block>
-      <block type="dicts_create_with">
-        <mutation items="3"></mutation>
-      </block> -->
-      <!-- <block type="BinOp"></block> -->
+
       <block type="return"></block>
       <block type="return_full"></block>
     </category>
@@ -619,7 +613,7 @@ export default {
   mounted: function () {
     this.workSpace = blockly.inject('blockly-div', {
       toolbox: document.getElementById('toolbox'),
-      media: '../../node_modules/blockx/node_modules/blockly/media/',
+      media: '../media/media/',
       zoom: {
         controls: true,
         wheel: true,
@@ -645,11 +639,86 @@ export default {
 }
 
 </script>
-
 <style>
 * {
   padding: 0;
   margin: 0;
+}
+.blockX, .python {
+  color: rgb(196,194,18);
+}
+.main {
+  background: url('../../img/body.jpg');
+  background-size: 100% 100%;
+}
+.body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.workspaceBorder {
+  background: url('../../img/boder.jpg');
+  background-size: 100% 100%;
+  border-radius:25px;
+  width: 800px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.workspaceLable {
+  line-height:50px;
+  text-align: center;
+  background: url('../../img/label.jpg');
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+  width: 750px;
+  height: 50px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+.workspace {
+  background-color:  rgb(0,0,0,0.5);
+  width: 750px;
+  height: 550px;
+  margin-left: 25px;
+}
+.textAreaBorder {
+  background: url('../../img/boder.jpg');
+  background-size: 100% 100%;
+   border-radius:25px;
+  width: 500px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+.textAreaLable {
+  line-height:50px;
+  text-align: center;
+  background: url('../../img/label.jpg');
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
+  width: 450px;
+  height: 50px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+.textArea {
+  background-color: orange;
+  width: 450px;
+  height: 550px;
+  margin-left: 25px;
 }
 
 header {
@@ -667,7 +736,7 @@ header .nav-bar {
   font-size: 25px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(145 239 80);
+  background-color:  rgb(0,0,0,0.7);
 }
 
 header ul {
@@ -694,38 +763,11 @@ header ul li select {
   margin: auto;
 }
 
-#tran-space {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: #f2f4f7;
-}
-
-#blockly-div {
-  margin: auto;
-  height: 700px;
-  flex: 0 0 50%;
-  display: inline-block;
-  width: 50%;
-}
-
-#code-div {
-  margin: auto;
-  background-color: rgb(206 245 179);
-  display: inline-block;
-  height: 700px;
-  flex: 0 0 50%;
-}
-
 #python-code {
-  margin-top: 20px;
-  margin-left: 20px;
-  height: 660px;
-  width: 94%;
-
+  width: 100%;
+  height: 100%;
 }
-/* stylelint-disable */
+
 .CodeMirror {
   height: 620px !important;
 }

@@ -681,14 +681,14 @@ export default {
   font-weight: bold;
   font-family: sans-serif;
   font-size: calc(4vh);
-  width: 93%;
+  width: 94%;
   height: 8%;
   margin-left: 3%;
   margin-top: 3%;
 }
 .workspace {
   background-color:  rgb(0,0,0,0.5);
-  width: 93%;
+  width: 94%;
   height: 85%;
   margin-left: 3%;
 }
@@ -712,14 +712,14 @@ export default {
   font-size: calc(4vh);
   border-top-left-radius:calc(4vh);
   border-top-right-radius:calc(4vh);
-  width: 93%;
+  width: 94%;
   height: 8%;
   margin-left: 3%;
   margin-top: 4%;
 }
 .textArea {
   background-color: orange;
-  width: 93%;
+  width: 94%;
   height: 85%;
   margin-left: 3%;
 }

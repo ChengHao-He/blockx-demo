@@ -579,6 +579,7 @@ import 'blockly/blocks'
 import 'blockly/javascript'
 import 'blockly/python'
 import * as en from 'blockly/msg/en'
+import Sk from 'skulpt'
 import Blockx from 'blockx'
 
 // 引入媒体文件：我是在github上下载的blockly源码，将源码中的media文件放入我项目中的public文件夹下
@@ -601,19 +602,24 @@ Vue.config.ignoredElements.push('FunctionDef')
 Vue.config.ignoredElements.push('import')
 Vue.config.ignoredElements.push('for_else')
 
-console.log(Blockly)
-const blockly = Blockx.initBlockly(Blockly)
-console.log('blockly', blockly)
-console.log('blockly', blockly.Blocks.BinOp)
+Blockx.initBlockly(Blockly)
+Blockx.initSk(Sk)
+Blockx.initPythonToBlock()
+
+const textToBlock = Blockx.getPythonToBlock()
+// eslint-disable-next-line new-cap
+const textToBlocks = new textToBlock()
 export default {
   data () {
     return {
       workSpace: null,
-      code: null
+      code: null,
+      TxtArea: null
     }
   },
   mounted: function () {
-    this.workSpace = blockly.inject('blockly-div', {
+    const that = this
+    this.workSpace = Blockly.inject('blockly-div', {
       toolbox: document.getElementById('toolbox'),
       media: './media/',
       zoom: {
@@ -626,16 +632,31 @@ export default {
       },
       trashcan: true
     })
-    console.log('workspace', this.workSpace)
+    this.TxtArea = document.getElementById('python-code')
     Blockly.HSV_SATURATION = 0.65
     Blockly.HSV_VALUE = 0.85
-    blockly.Xml.domToWorkspace(document.getElementById('toolbox'), this.workSpace)
+    Blockly.Xml.domToWorkspace(document.getElementById('toolbox'), this.workSpace)
     this.workSpace.addChangeListener(this.updateFunction)
+    this.TxtArea.onblur = function () {
+      console.log('WorkSpace')
+      that.TxtArea.removeEventListener('input', that.textChangeListener)
+      that.workSpace.addChangeListener(that.updateFunction)
+    }
+    this.TxtArea.onfocus = function () {
+      console.log('clickTXT')
+      that.workSpace.removeChangeListener(that.updateFunction)
+      that.TxtArea.addEventListener('input', that.textChangeListener)
+    }
   },
   methods: {
     updateFunction: function () {
-      this.code = blockly.Python.workspaceToCode(this.workSpace)
+      this.code = Blockly.Python.workspaceToCode(this.workSpace)
       document.getElementById('python-code').value = this.code
+    },
+    textChangeListener: function () {
+      const blockXml = textToBlocks.convertSource(this.TxtArea.value)
+      this.workSpace.clear()
+      Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(blockXml.xml), this.workSpace)
     }
   }
 }

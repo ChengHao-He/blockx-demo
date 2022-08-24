@@ -12,6 +12,7 @@
     "blockx": "../blockx",
     "core-js": "^3.8.3",
     "path-browserify": "^1.0.1",
+    "skulpt": "^1.2.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1"
   },

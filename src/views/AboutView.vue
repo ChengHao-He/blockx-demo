@@ -652,90 +652,89 @@ export default {
 .main {
   background: url('../../img/body.jpg');
   background-size: 100% 100%;
+  width: 100%;
+  height: calc(97vh);
 }
 .body {
   width: 100%;
-  height: 100%;
+  height: 93%;
   display: flex;
+  justify-content: center;
 }
 .workspaceBorder {
   background: url('../../img/boder.jpg');
   background-size: 100% 100%;
-  border-radius:25px;
-  width: 800px;
-  height: 650px;
+  border-radius:calc(4vh);
+  width: 50%;
+  height: 93%;
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-left: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 .workspaceLable {
-  line-height:50px;
   text-align: center;
   background: url('../../img/label.jpg');
-  border-top-left-radius:25px;
-  border-top-right-radius:25px;
+  border-top-left-radius:calc(4vh);
+  border-top-right-radius:calc(4vh);
   font-weight: bold;
   font-family: sans-serif;
-  font-size: 25px;
-  width: 750px;
-  height: 50px;
-  margin-left: 25px;
-  margin-top: 25px;
+  font-size: calc(4vh);
+  width: 93%;
+  height: 8%;
+  margin-left: 3%;
+  margin-top: 3%;
 }
 .workspace {
   background-color:  rgb(0,0,0,0.5);
-  width: 750px;
-  height: 550px;
-  margin-left: 25px;
+  width: 93%;
+  height: 85%;
+  margin-left: 3%;
 }
 .textAreaBorder {
   background: url('../../img/boder.jpg');
   background-size: 100% 100%;
-   border-radius:25px;
-  width: 500px;
-  height: 650px;
+  border-radius:calc(4vh);
+  width: 30%;
+  height: 93%;
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-bottom: 25px;
+  margin-left: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 .textAreaLable {
-  line-height:50px;
   text-align: center;
   background: url('../../img/label.jpg');
   font-weight: bold;
   font-family: sans-serif;
-  font-size: 25px;
-  border-top-left-radius:25px;
-  border-top-right-radius:25px;
-  width: 450px;
-  height: 50px;
-  margin-left: 25px;
-  margin-top: 25px;
+  font-size: calc(4vh);
+  border-top-left-radius:calc(4vh);
+  border-top-right-radius:calc(4vh);
+  width: 93%;
+  height: 8%;
+  margin-left: 3%;
+  margin-top: 4%;
 }
 .textArea {
   background-color: orange;
-  width: 450px;
-  height: 550px;
-  margin-left: 25px;
+  width: 93%;
+  height: 85%;
+  margin-left: 3%;
 }
 
 header {
-  background-color: 1px solid #faebcc;
   width: 100%;
-  height: 40px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  height: calc(4vh);
 }
 
-header .nav-bar {
-  height: 50px;
+.nav-bar {
+  height: calc(6vh);
   display: flex;
   font-weight: bold;
   font-family: sans-serif;
-  font-size: 25px;
+  font-size: calc(4vh);
   align-items: center;
   justify-content: space-between;
   background-color:  rgb(0,0,0,0.7);
@@ -753,12 +752,12 @@ header ul li {
 }
 
 header ul li select {
-  height: 25px;
-  margin: 10px;
+  height: calc(4vh);
+  margin: calc(4vh);
 }
 
 #blockx-version {
-  margin: 20px;
+  margin: calc(4vh);
 }
 
 #python-version {
@@ -771,7 +770,7 @@ header ul li select {
 }
 
 .CodeMirror {
-  height: 620px !important;
+  height: calc(90vh) !important;
 }
 
 </style>

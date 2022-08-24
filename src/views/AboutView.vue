@@ -581,7 +581,9 @@ import 'blockly/python'
 import * as en from 'blockly/msg/en'
 import Blockx from 'blockx'
 
+// 引入媒体文件：我是在github上下载的blockly源码，将源码中的media文件放入我项目中的public文件夹下
 Blockly.setLocale(en)
+
 Vue.config.ignoredElements.push('xml')
 Vue.config.ignoredElements.push('block')
 Vue.config.ignoredElements.push('field')
@@ -613,7 +615,7 @@ export default {
   mounted: function () {
     this.workSpace = blockly.inject('blockly-div', {
       toolbox: document.getElementById('toolbox'),
-      media: '../media/media/',
+      media: './media/',
       zoom: {
         controls: true,
         wheel: true,

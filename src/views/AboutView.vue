@@ -33,119 +33,248 @@
       </div>
     </div>
   <xml id="toolbox" style="display:none">
-    <category name="Variables" colour="225" custom="VARIABLE">
+    <category name="变量" colour="#D44E42" custom="VARIABLE">
     </category>
-    <category name="Literal Values" colour="30">
-
-      <block type="return"></block>
-      <block type="return_full"></block>
+    <category name="字面值" colour="#D47742">
+      <block type="math_number"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="character"></block>
     </category>
-    <category name="Calculations" colour="190">
-    </category>
-    <category name="Logic" colour="345"></category>
     <sep></sep>
-    <category name="Classes" colour="240">
-      <block type="class_def" line_number="1" inline="false">
-        <mutation decorators="0" bases="0" keywords="0"></mutation>
-        <field name="NAME">___</field>
-      </block>
-      <block type="class_def" line_number="1" inline="false">
-        <mutation decorators="0" bases="1" keywords="0"></mutation>
-        <field name="NAME">___</field>
-      </block>
-      <block type="attribute" line_number="1">
-        <field name="VALUE">___</field>
-        <field name="ATTR">___</field>
-      </block>
-      <block type="assign" line_number="1" inline="true">
-        <mutation initialized="false"></mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="0" returns="true" parameters="true" method="false" name="super" message="super" premessage="" colour="240" module=""></mutation>
-      </block>
-      <block type="ellipsis"></block>
+    <category name="字符串" colour="#D49A42">
+      <block type="text"></block>
+      <block type="text_multiline"></block>
+      <block type="text_join"></block>
+      <block type="text_append"></block>
+      <block type="text_length"></block>
+      <block type="text_isEmpty"></block>
+      <block type="text_indexOf"></block>
+      <block type="text_charAt"></block>
+      <block type="text_getSubstring"></block>
+      <block type="text_changeCase"></block>
+      <block type="text_trim"></block>
+      <block type="text_count"></block>
+      <block type="text_replace"></block>
+      <block type="text_reverse"></block>
     </category>
-    <category name="Functions" colour="210">
-      <block type="FunctionDef"></block>
-      <block type="lambda">
-        <mutation decorators="0" parameters="1" returns="false"/>
-        <value name="PARAMETER0">
-        <block type="FunctionParameter" line_number="1" movable="false" deletable="false">
-          <field name="NAME">___</field>
+    <category name="列表" colour="#D4C342">
+      <block type="lists_create_with">
+        <mutation items="1"></mutation>
+      </block>
+      <block type="list_comp" line_number="1" inline="false">
+        <mutation items="1" />
+        <value name="GENERATOR0">
+          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+      </block>
+      <block type="list_comp" line_number="1" inline="false">
+        <mutation items="2" />
+        <value name="GENERATOR0">
+          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+        <value name="GENERATOR1">
+          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+      </block>
+      <block type="lists_getSublist"></block>
+      <block type="Subscript" line_number="1" inline="true">
+        <mutation>
+        <arg name="I"/>
+        </mutation>
+      </block>
+      <block type="Subscript" line_number="1" inline="true">
+        <mutation>
+        <arg name="S110"/>
+        </mutation>
+      </block>
+      <block type="Subscript" line_number="1" inline="true">
+        <mutation>
+        <arg name="S111"/>
+        </mutation>
+      </block>
+    </category>
+    <category name="元组" colour="#B7D442">
+      <block type="tuples_create_with">
+        <mutation items="1"></mutation>
+      </block>
+      <block type="tuples_getSubtuple"></block>
+    </category>
+    <category name="集合" colour="#8AD442">
+      <block type="sets_create_with">
+        <mutation items="1"></mutation>
+      </block>
+      <block type="set_comp" line_number="1" inline="false">
+        <mutation items="1"/>
+        <value name="GENERATOR0">
+          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false"/>
+        </value>
+      </block>
+      <block type="set_comp" line_number="1" inline="false">
+        <mutation items="2" />
+        <value name="GENERATOR0">
+          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+        <value name="GENERATOR1">
+          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+      </block>
+    </category>
+    <category name="字典" colour="#65D442">
+      <block type="dicts_create_with">
+        <mutation items="1"></mutation>
+      </block>
+      <block type="dict_comp" line_number="1" inline="false">
+        <mutation items="2" />
+        <value name="ELT">
+          <block type="dicts_pair" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+        <value name="GENERATOR0">
+          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+        <value name="GENERATOR1">
+          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+      </block>
+      <block type="dict_comp" line_number="1" inline="false">
+        <mutation items="2" />
+        <value name="ELT">
+          <block type="dicts_pair" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+        <value name="GENERATOR0">
+          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+        <value name="GENERATOR1">
+          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
+        </value>
+      </block>
+    </category>
+    <category name="表达式" colour="#42D442">
+      <category name="生成器表达式" colour="black">
+        <block type="generator_expr" line_number="1" inline="false">
+          <mutation items="1"/>
+          <value name="GENERATOR0">
+            <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false"/>
+          </value>
         </block>
-        </value>
-      </block>
-    </category>
-    <category name="Imports" colour="60">
-      <block type="import" line_number="1" inline="true">
-        <mutation names="1" from="false">
-          <regular name="true" />
-        </mutation>
-        <field name="NAME0">___</field>
-      </block>
-      <block type="import" line_number="1" inline="true">
-        <mutation names="1" from="true">
-          <regular name="true" />
-        </mutation>
-        <field name="NAME0">___</field>
-        <field name="MODULE">___</field>
-      </block>
-      <block type="import" line_number="1" inline="true">
-        <mutation names="1" from="false">
-          <regular name="false" />
-        </mutation>
-        <field name="NAME0">___</field>
-        <field name="ASNAME0">___</field>
-      </block>
-      <block type="import" line_number="1" inline="true">
-        <mutation names="1" from="true">
-          <regular name="false" />
-        </mutation>
-        <field name="NAME0">___</field>
-        <field name="ASNAME0">___</field>
-        <field name="MODULE">___</field>
-      </block>
+        <block type="generator_expr" line_number="1" inline="false">
+          <mutation items="2" />
+          <value name="GENERATOR0">
+            <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
+          </value>
+          <value name="GENERATOR1">
+            <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
+          </value>
+        </block>
+      </category>
+      <category name="逻辑及操作符" colour="black">
+        <block type="if_expr" line_number="1"></block>
+        <block type="BinOp"></block>
+        <block type="UnaryOpUAdd"></block>
+        <block type="UnaryOpUSub"></block>
+        <block type="UnaryOpNot"></block>
+        <block type="UnaryOpInvert"></block>
+      </category>
     </category>
     <sep></sep>
-    <category name="Control Flow" colour="270">
-      <block type="controls_if">
-        <mutation orelse="false" elifs="0" />
-      </block>
-      <block type="for_else"></block>
-      <block type="while"></block>
-      <block type="break"></block>
-      <block type="continue"></block>
-      <block type="assert"></block>
-      <block type="assert_full"></block>
-      <block type="with"></block>
-      <block type="try">
-        <mutation orelse="false" finalbody="false" handlers="1">
-          <arg name="3"></arg>
-        </mutation>
-        <field name="NAME0">___</field>
-      </block>
-      <block type="raise"></block>
-      <block type="with" line_number="1" inline="false">
-        <mutation items="1">
-          <as name="[object Object]"></as>
-        </mutation>
-        <value name="ITEM0">
-          <block type="with_item_as" line_number="1" inline="true" deletable="false" movable="false"></block>
-        </value>
-      </block>
+    <category name="控制结构" colour="#42D463">
+      <category name="循环结构" colour="black">
+        <block type="for"></block>
+        <block type="while"></block>
+      </category>
+      <category name="分支结构" colour="black">
+        <block type="controls_if"></block>
+      </category>
+      <category name="条件" colour="black">
+        <block type="Compare"></block>
+        <block type="break"></block>
+        <block type="continue"></block>
+      </category>
     </category>
-    <sep></sep>
-    <category name="Output" colour="140"></category>
-    <category name="Input" colour="120"></category>
-    <category name="Files" colour="170"></category>
-    <sep></sep>
-    <category name="Conversion" colour="120"></category>
-    <category name="Builtin Functions" colour="15">
+    <category name="增量赋值" colour="#42D492">
+      <block type="aug_assign"></block>
+    </category>
+    <category name="类型转换" colour="#42D4BA">
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="abs" message="abs" premessage="" colour="190" module="">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="bool" message="bool" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
       </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="int" message="int" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="float" message="float" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="str" message="str" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="list" message="list" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="tuple" message="tuple" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="set" message="set" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="frozenset" message="frozenset" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="dict" message="dict" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+    </category>
+    <category name="内置函数" colour="#42D2D4">
+      <category name="数学" colour="black">
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="abs" message="abs" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="max" message="max" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="min" message="min" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="pow" message="pow" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="round" message="round" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="sum" message="sum" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+      </category>
+      <category name="其他" colour="black">
       <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="aiter" message="aiter" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
@@ -173,16 +302,6 @@
       </block>
       <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="bin" message="bin" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="bool" message="bool" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="breakpoint" message="breakpoint" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
       </block>
@@ -227,11 +346,6 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="dict" message="dict" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="dir" message="dir" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
@@ -262,17 +376,7 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="float" message="float" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="format" message="format" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="frozenset" message="frozenset" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
       </block>
@@ -312,16 +416,6 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="input" message="input" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="int" message="int" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="isinstance" message="isinstance" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
@@ -342,11 +436,6 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="list" message="list" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="locals" message="locals" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
@@ -357,20 +446,11 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="max" message="max" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="memoryview" message="memoryview" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
       </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="min" message="min" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
+
       <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="next" message="next" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
@@ -397,16 +477,6 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="pow" message="pow" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="print" message="print" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="property" message="property" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
@@ -427,16 +497,6 @@
         </mutation>
       </block>
       <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="round" message="round" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="set" message="set" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="setattr" message="setattr" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
@@ -448,26 +508,6 @@
       </block>
       <block type="Call" line_number="1" inline="true">
         <mutation arguments="1" returns="true" parameters="true" method="false" name="staticmethod" message="staticmethod" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="str" message="str" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="sum" message="sum" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="super" message="super" premessage="" colour="190" module="">
-        <arg name="UNKNOWN_ARG:0"/>
-        </mutation>
-      </block>
-      <block type="Call" line_number="1" inline="true">
-        <mutation arguments="1" returns="true" parameters="true" method="false" name="tuple" message="tuple" premessage="" colour="190" module="">
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
       </block>
@@ -491,84 +531,120 @@
         <arg name="UNKNOWN_ARG:0"/>
         </mutation>
       </block>
+      </category>
     </category>
-    <category name="List Methods" colour="30"></category>
-    <category name="String Methods" colour="120"></category>
-    <category name="Subscripting" colour="15"></category>
-    <category name="Generators" colour="15">
-      <block type="list_comp" line_number="1" inline="false">
-        <mutation items="1" />
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="generator_expr" line_number="1" inline="false">
-        <mutation items="1" />
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="set_comp" line_number="1" inline="false">
-        <mutation items="1" />
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="dict_comp" line_number="1" inline="false">
-        <mutation items="2" />
-        <value name="ELT">
-          <block type="dict_item" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR1">
-          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="list_comp" line_number="1" inline="false">
-        <mutation items="2" />
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR1">
-          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="generator_expr" line_number="1" inline="false">
-        <mutation items="2" />
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR1">
-          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="set_comp" line_number="1" inline="false">
-        <mutation items="2" />
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR1">
-          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-      </block>
-      <block type="dict_comp" line_number="1" inline="false">
-        <mutation items="2" />
-        <value name="ELT">
-          <block type="dict_item" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR0">
-          <block type="comprehension_for" line_number="1" inline="true" deletable="false" movable="false" />
-        </value>
-        <value name="GENERATOR1">
-          <block type="comprehension_if" line_number="1" inline="true" deletable="false" movable="false" />
+    <sep></sep>
+    <category name="自定义函数" colour="#42ACD4">
+      <block type="FunctionDef"></block>
+      <block type="lambda">
+        <mutation decorators="0" parameters="1" returns="false"/>
+        <value name="PARAMETER0">
+        <block type="FunctionParameter" line_number="1" movable="false" deletable="false">
+          <field name="NAME">___</field>
+        </block>
         </value>
       </block>
     </category>
-    <category name="Comments" colour="60">
+    <category name="自定义类" colour="#428DD4">
+      <block type="class_def" line_number="1" inline="false">
+        <mutation decorators="0" bases="0" keywords="0"/>
+        <field name="NAME">___</field>
+      </block>
+      <block type="class_def" line_number="1" inline="false">
+        <mutation decorators="0" bases="1" keywords="0"/>
+        <field name="NAME">___</field>
+      </block>
+      <block type="attribute" line_number="1">
+        <field name="VALUE">___</field>
+        <field name="ATTR">___</field>
+      </block>
+      <block type="assign" line_number="1" inline="true">
+        <mutation initialized="false"/>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="0" returns="true" parameters="true" method="false" name="super" message="super" premessage="" colour="240" module=""/>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="super" message="super" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
     </category>
-  </xml>
+    <sep></sep>
+    <category name="异常处理" colour="#426CD4">
+      <block type="assert"></block>
+      <block type="assert_full"></block>
+      <block type="with"></block>
+      <block type="try">
+        <mutation orelse="false" finalbody="false" handlers="1">
+          <arg name="3"></arg>
+        </mutation>
+        <field name="NAME0">___</field>
+      </block>
+      <block type="raise"></block>
+      <block type="with" line_number="1" inline="false">
+        <mutation items="1">
+          <as name="[object Object]"></as>
+        </mutation>
+        <value name="ITEM0">
+          <block type="with_item_as" line_number="1" inline="true" deletable="false" movable="false"></block>
+        </value>
+      </block>
+      <block type="Call" line_number="1" inline="true">
+        <mutation arguments="1" returns="true" parameters="true" method="false" name="breakpoint" message="breakpoint" premessage="" colour="190" module="">
+        <arg name="UNKNOWN_ARG:0"/>
+        </mutation>
+      </block>
+    </category>
+    <category name="模块导入" colour="#4250D4">
+      <block type="import" line_number="1" inline="true">
+        <mutation names="1" from="false">
+          <regular name="true" />
+        </mutation>
+        <field name="NAME0">___</field>
+      </block>
+      <block type="import" line_number="1" inline="true">
+        <mutation names="1" from="true">
+          <regular name="true" />
+        </mutation>
+        <field name="NAME0">___</field>
+        <field name="MODULE">___</field>
+      </block>
+      <block type="import" line_number="1" inline="true">
+        <mutation names="1" from="false">
+          <regular name="false" />
+        </mutation>
+        <field name="NAME0">___</field>
+        <field name="ASNAME0">___</field>
+      </block>
+      <block type="import" line_number="1" inline="true">
+        <mutation names="1" from="true">
+          <regular name="false" />
+        </mutation>
+        <field name="NAME0">___</field>
+        <field name="ASNAME0">___</field>
+        <field name="MODULE">___</field>
+      </block>
+    </category>
+    <category name="输入/输出" colour="#5142D4">
+      <category name="输出" colour="black">
+        <block type="text_print"></block>
+      </category>
+      <category name="输入" colour="black">
+        <block type="text_prompt_ext"></block>
+        <block type="text_prompt"></block>
+        <block type="Call" line_number="1" inline="true">
+          <mutation arguments="1" returns="true" parameters="true" method="false" name="input" message="input" premessage="" colour="190" module="">
+          <arg name="UNKNOWN_ARG:0"/>
+          </mutation>
+        </block>
+      </category>
+      <category name="文件读写" colour="black"></category>
+    </category>
+    <category name="注释" colour="#7342D4">
+      <block type="Comment"></block>
+    </category>
+  </xml>ASSIGN_REF
   </div>
 </template>
 

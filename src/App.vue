@@ -2,14 +2,10 @@
   <div class="app">
     <div class="main">
       <header>
-         <div class="nav-bar">
-        <ul>
-            <li id="blockx-version">
-                <p class="blockX">BlockX 1.0</p>
-            </li>
-        </ul>
-      </div>
-       </header>
+        <div class="nav-bar">
+          <p class="blockX">BlockX 1.0</p>
+        </div>
+      </header>
       <div class="body">
         <div class="workspaceBorder">
           <div class="workspaceLable">积木区</div>
@@ -24,7 +20,9 @@
       </div>
     </div>
   <xml id="toolbox" style="display:none">
-    <category name="变量" colour="#D44E42" custom="VARIABLE">
+    <category name="新变量" colour="#D44E42">
+      <block type="variables_set"></block>
+      <block type="variables_get"></block>
     </category>
     <category name="字面值" colour="#D47742">
       <block type="math_number"></block>
@@ -564,7 +562,6 @@
     <sep></sep>
     <category name="异常处理" colour="#426CD4">
       <block type="assert"></block>
-      <block type="assert_full"></block>
       <block type="with"></block>
       <block type="try">
         <mutation orelse="false" finalbody="false" handlers="1">
@@ -767,8 +764,9 @@ export default {
   padding: 0;
   margin: 0;
 }
-.blockX, .python {
+.blockX {
   color: rgb(196,194,18);
+  margin-left: 10%;
 }
 .main {
   background: url('../img/body.jpg');
@@ -790,15 +788,12 @@ export default {
   height: 93%;
   display: flex;
   flex-direction: column;
-  margin-left: 3%;
   margin-top: 3%;
   margin-bottom: 3%;
 }
 .workspaceLable {
   text-align: center;
   background: url('../img/label.jpg');
-  border-top-left-radius:calc(4vh);
-  border-top-right-radius:calc(4vh);
   font-weight: bold;
   font-family: sans-serif;
   font-size: calc(4vh);
@@ -831,8 +826,6 @@ export default {
   font-weight: bold;
   font-family: sans-serif;
   font-size: calc(4vh);
-  border-top-left-radius:calc(4vh);
-  border-top-right-radius:calc(4vh);
   width: 94%;
   height: 8%;
   margin-left: 3%;
@@ -877,17 +870,13 @@ header ul li select {
   margin: calc(4vh);
 }
 
-#blockx-version {
-  margin: calc(4vh);
-}
-
 #python-code {
   width: 100%;
   height: 100%;
 }
 
 .CodeMirror {
-  height: calc(90vh) !important;
+  height: 100%;
 }
 
 </style>

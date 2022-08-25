@@ -10,6 +10,7 @@
   "dependencies": {
     "blockly": "^8.0.5",
     "blockx": "../blockx",
+    "codemirror": "5.65.8",
     "core-js": "^3.8.3",
     "path-browserify": "^1.0.1",
     "skulpt": "^1.2.0",

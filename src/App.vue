@@ -570,7 +570,6 @@
         <mutation orelse="false" finalbody="false" handlers="1">
           <arg name="3"></arg>
         </mutation>
-        <field name="NAME0">___</field>
       </block>
       <block type="raise"></block>
       <block type="with" line_number="1" inline="false">
@@ -649,6 +648,17 @@ import * as en from 'blockly/msg/en'
 import Sk from 'skulpt'
 import Blockx from 'blockx'
 
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/elegant.css'
+import 'codemirror/addon/display/fullscreen.css'
+import CodeMirror from 'codemirror'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/xml/xml.js'
+import 'codemirror/mode/css/css.js'
+import 'codemirror/mode/htmlmixed/htmlmixed.js'
+import 'codemirror/mode/python/python.js'
+import 'codemirror/addon/selection/active-line.js'
+import 'codemirror/addon/edit/matchbrackets.js'
 Blockly.setLocale(en)
 
 Vue.config.ignoredElements.push('xml')
@@ -698,29 +708,53 @@ export default {
       },
       trashcan: true
     })
-    this.TxtArea = document.getElementById('python-code')
+    // this.TxtArea = document.getElementById('python-code')
     Blockly.HSV_SATURATION = 0.65
     Blockly.HSV_VALUE = 0.85
     Blockly.Xml.domToWorkspace(document.getElementById('toolbox'), this.workSpace)
     this.workSpace.addChangeListener(this.updateFunction)
-    this.TxtArea.onblur = function () {
-      console.log('WorkSpace')
-      that.TxtArea.removeEventListener('input', that.textChangeListener)
+    // 代码编辑editor
+    this.editor = CodeMirror.fromTextArea(document.getElementById('python-code'), {
+      lineNumbers: true, // 显示行号
+      indentUnit: 4, // 缩进
+      styleActiveLine: true,
+      matchBrackets: true,
+      mode: 'python', // 语言
+      lineWrapping: true,
+      theme: 'elegant' // 主题
+    })
+    this.editor.setOption('extraKeys', {
+      // <Tab> to 4 <space>
+      Tab: function (cm) {
+        const spaces = Array(cm.getOption('indentUnit') + 1).join(' ')
+        cm.replaceSelection(spaces)
+      },
+      // F11键切换全屏
+      F11: function (cm) {
+        cm.setOption('fullScreen', !cm.getOption('fullScreen'))
+      },
+      // Esc键退出全屏
+      Esc: function (cm) {
+        if (cm.getOption('fullScreen')) cm.setOption('fullScreen', false)
+      }
+    })
+    this.editor.on('blur', function () {
+      that.editor.off('change', that.updateFunctionEdi)
       that.workSpace.addChangeListener(that.updateFunction)
-    }
-    this.TxtArea.onfocus = function () {
-      console.log('clickTXT')
+    })
+    this.editor.on('focus', function () {
+      that.editor.on('change', that.updateFunctionEdi)
       that.workSpace.removeChangeListener(that.updateFunction)
-      that.TxtArea.addEventListener('input', that.textChangeListener)
-    }
+    })
   },
   methods: {
     updateFunction: function () {
       this.code = Blockly.Python.workspaceToCode(this.workSpace)
       document.getElementById('python-code').value = this.code
+      this.editor.setValue(this.code)
     },
-    textChangeListener: function () {
-      const blockXml = textToBlocks.convertSource(this.TxtArea.value)
+    updateFunctionEdi: function () {
+      const blockXml = textToBlocks.convertSource(this.editor.getValue())
       this.workSpace.clear()
       Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(blockXml.xml), this.workSpace)
     }

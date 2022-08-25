@@ -643,7 +643,7 @@ import 'blockly/javascript'
 import 'blockly/python'
 import * as en from 'blockly/msg/en'
 import Sk from 'skulpt'
-import Blockx from 'blockx'
+import Blockx from 'blockx-drag'
 
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/elegant.css'
